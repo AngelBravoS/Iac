@@ -1,0 +1,7 @@
+/home/angel/codigo/github/iac/build/CMakeFiles/install/strip.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/edit_cache.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/iac.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/rebuild_cache.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/list_install_components.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/install/local.dir
+/home/angel/codigo/github/iac/build/CMakeFiles/install.dir
