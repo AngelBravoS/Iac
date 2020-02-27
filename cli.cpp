@@ -21,47 +21,50 @@
  
 //CLI => Command Line Interface.
 #include "cli.hpp"
-#include <iostream>
 
-char CLI::getOpcionSeleccionada() {
-	return respuestaUsuario;
+void CLI::eleccion(unsigned int i) {
+	std::cin >> opciones[i];
 }
 
-void CLI::setOpcionSeleccionada(char respuestaUsuarioPublica) {
-	respuestaUsuario = respuestaUsuarioPublica;
-}
-
-void CLI::eleccion() {
-	char opcionElegida;
-	std::cin >> opcionElegida;
-	//eleccion='1';
-	setOpcionSeleccionada(opcionElegida);
-}
-
-//modificar la forma de las opciones/respuestas
-
-void CLI::menuPrincipal() { //No me gusta
+void CLI::menuPrincipal() {
+    unsigned int a, b, m, X0;
 	do {
 		listadOpcionesPricipales();
-		eleccion();
-		switch(getOpcionSeleccionada()) {
+		eleccion(0);
+		switch(opciones[0]) {
 			case '1' : {
                 tipoGenerador();
-                eleccion();
-                switch(getOpcionSeleccionada()) {
-                    case 'x' : {
-                        
-                    break;
-                    }
-                    case 'm' : {
-                    break;
-                    }
-                            
+                eleccion(1);
+                std::cout << "valor de a = ";
+                std::cin >> a;
+                if (opciones[1]=='x'){
+                    std::cout << "valor de b = ";
+                    std::cin >> b;
+                } else {
+                    b = 0;
                 }
+                std::cout << "valor de m = ";
+                std::cin >> m;
+                std::cout << "valor de Xo = ";
+                std::cin >> X0;
+                if((m <= a || m <= b) && opciones[1]=='x') {
+                    std::cout << "secuencia no válida (m > a,b)." << "\n";
+                    exit(-1);
+                } else {
+                    std::cout << "La secuencia es:" << '\n';
+                    Calculos gc(a,b,m,X0);
+                    gc.crearSecuencia();
+                    gc.mostrarSecuencia();
+                }
+                break;
             }
             case '2' : {
+                tipoGenerador();
+                eleccion(1);
+                Calculos gc(a,b,m);
+                gc.comprobarPeriodo(opciones[1]);
                 break;
             }
 		}
-	} while(getOpcionSeleccionada() != '0');
+	} while(opciones[0] != '0');
 }

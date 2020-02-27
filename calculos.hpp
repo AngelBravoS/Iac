@@ -22,30 +22,39 @@
 #ifndef CALCULOS_HPP_INCLUDED
 #define CALCULOS_HPP_INCLUDED
 
+#include <iostream>
 #include "funcMatematicasBasicas.hpp"
 #include "distribucionesDiscretas.hpp"
+#include <vector>
 
 class Calculos {
     public:
-    //======== constructor ========
-    Calculos ();
-    Calculos (unsigned int a, unsigned int b,
-                                     unsigned int m, unsigned int X0);
-    Calculos (unsigned int a, unsigned int b,
-                                     unsigned int m);
-    //========  GC Mixto y Multiplicativo ========
-    unsigned int congruencial(unsigned int X0);
-    //========  funciones  ========
-    void crearSecuencia();
-    unsigned int comprobarPeriodo ();
+        //======== constructor ========
+        Calculos ();
+        Calculos (unsigned int parametro_a, unsigned int parametro_b,
+                    unsigned int parametro_m, unsigned int parametro_X0);
+        Calculos(unsigned int parametro_a, unsigned int parametro_b, 
+                    unsigned int parametro_m);
+        
+        //========  GC Mixto y Multiplicativo ========
+        unsigned int congruencial(unsigned int X0);
+        
+        //========  funciones  ========
+        void crearSecuencia();
+        void mostrarSecuencia();
+        
+        unsigned int comprobarPeriodo (char tipoGenerador);
+        void mostrarComprobacion();
+    
     protected:
-    unsigned int a;
-    unsigned int b;
-    unsigned int m;
-    unsigned int X0;
-    bool periodoCompleto;
-    bool periodoMaximo;
-    //unsigned int *vector;
+        unsigned int a;
+        unsigned int b;
+        unsigned int m;
+        unsigned int X0;
+        bool periodoCompleto;
+        bool periodoMaximo;
+        std::vector<unsigned int> secuencia;
+        //unsigned int *vector;
 };
 
 #endif // CALCULOS_HPP_INCLUDED

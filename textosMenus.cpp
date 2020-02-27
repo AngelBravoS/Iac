@@ -24,7 +24,7 @@
 
 void CLI::hasElegido() {
 	std::cout << '\n';
-	std::cout << "has elegido: " << getOpcionSeleccionada() << '\n';
+//	std::cout << "has elegido: " << getOpcionSeleccionada() << '\n';
 	std::cout << '\n';
 }
 
@@ -50,13 +50,13 @@ void CLI::ayuda() {
 }
 
 void CLI::listadOpcionesPricipales() {
-	std::cout << "		Menú principal" << '\n';
+	
 	std::cout << "	=========================== " << '\n';
 	std::cout << '\n';
 	std::cout << "1) Calcular la secuencia de generadores congruenciales." << '\n';
 	std::cout << "2) Comprobar el período de un generador congruencial." << '\n';
 	std::cout << "3) Generar valores aleatorios de distribuciones aleatorias." << '\n';
-	std::cout << "pulsa cualquier otra para salir." << '\n';
+	std::cout << "0) Salir." << '\n';
 	std::cout << "> ";
 }
 

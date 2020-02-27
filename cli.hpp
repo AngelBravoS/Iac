@@ -23,17 +23,23 @@
 #ifndef _CLI_HPP_
 #define _CLI_HPP_
 
+#include "calculos.hpp"
+#include <iostream>
+
 class CLI {
 	public:
         //======== setters y getters ========
 		char getOpcionSeleccionada();
 		void setOpcionSeleccionada(char respuestaUsuarioPublica);
+        void mostrarSecuencia();
+        void mostrarComprobacion();
 		//======== funciones de menu ========
 		void introduccion();
 		void acercaDe();
 		void ayuda();
-		void eleccion();
-		void hasElegido();
+		//void eleccion();
+		void eleccion(unsigned int i);
+        void hasElegido();
 		//======== Textos de menús ========
 		void listadOpcionesPricipales();
         void menuPrincipal();

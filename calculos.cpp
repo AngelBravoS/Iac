@@ -22,6 +22,22 @@
 #include "calculos.hpp"
 #include "funcMatematicasBasicas.hpp"
 
+Calculos::Calculos(unsigned int parametro_a, unsigned int parametro_b,
+                                     unsigned int parametro_m, unsigned int parametro_X0) {
+    a = parametro_a;
+    b = parametro_b;
+    m = parametro_m;
+    X0 = parametro_X0;
+}
+
+Calculos::Calculos(unsigned int parametro_a, unsigned int parametro_b,
+                                     unsigned int parametro_m) {
+    a = parametro_a;
+    b = parametro_b;
+    m = parametro_m;
+    if (b == 0) {periodoCompleto = false;}
+}
+
 //---función para el generador congruencial mixto y multiplicativo--
 unsigned int Calculos::congruencial(unsigned int semilla) {
 	unsigned int resultado ;
@@ -30,3 +46,32 @@ unsigned int Calculos::congruencial(unsigned int semilla) {
 		resultado = resultado % m;
 	return resultado;
 }
+
+unsigned int Calculos::comprobarPeriodo(char tipoGenerador) {
+    unsigned int resultado = 0;
+    if (tipoGenerador == 'x'){
+        
+    } else {
+        
+    }
+    return resultado;
+}
+
+void Calculos::crearSecuencia() {
+    unsigned int Xn = congruencial(X0);
+    secuencia.push_back(Xn);
+    while(X0 != Xn) {
+        Xn = congruencial(Xn);
+        secuencia.push_back(Xn);
+    }
+}
+
+void Calculos::mostrarSecuencia() {
+    std::cout << "( ";
+    for (unsigned int i=0; i< secuencia.size(); i++) {
+        std::cout << secuencia[i] << ", ";
+    }
+    std::cout << ")" << "\n" << "\n";
+}
+
+
