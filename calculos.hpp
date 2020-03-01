@@ -23,38 +23,45 @@
 #define CALCULOS_HPP_INCLUDED
 
 #include <iostream>
+#include <vector>
+#include <algorithm> 
+#include <math.h>
+
 #include "funcMatematicasBasicas.hpp"
 #include "distribucionesDiscretas.hpp"
-#include <vector>
 
 class Calculos {
-    public:
-        //======== constructor ========
-        Calculos ();
-        Calculos (unsigned int parametro_a, unsigned int parametro_b,
-                    unsigned int parametro_m, unsigned int parametro_X0);
-        Calculos(unsigned int parametro_a, unsigned int parametro_b, 
-                    unsigned int parametro_m);
-        
-        //========  GC Mixto y Multiplicativo ========
-        unsigned int congruencial(unsigned int X0);
-        
-        //========  funciones  ========
-        void crearSecuencia();
-        void mostrarSecuencia();
-        
-        unsigned int comprobarPeriodo (char tipoGenerador);
-        void mostrarComprobacion();
-    
-    protected:
-        unsigned int a;
-        unsigned int b;
-        unsigned int m;
-        unsigned int X0;
-        bool periodoCompleto;
-        bool periodoMaximo;
-        std::vector<unsigned int> secuencia;
-        //unsigned int *vector;
+public:
+	//======== constructor ========
+	Calculos ();
+	Calculos (unsigned int parametro_a, unsigned int parametro_b,
+	   unsigned int parametro_m, unsigned int parametro_X0);
+	Calculos (unsigned int parametro_a, unsigned int parametro_b,
+	   unsigned int parametro_m);
+
+    //========  funciones  ========
+    bool esPrimo(unsigned int numero);
+    bool sonCoprimos (unsigned int numero1, unsigned int numero2);
+    bool sonCongruentes (unsigned int numero1, unsigned int numero2, unsigned int numero3);
+    bool sonCongruentesFactoresPrimoP();
+    bool esMCongruente4();
+    unsigned int generador (unsigned int X0);
+	
+
+	void crearSecuencia();
+	void mostrarSecuencia();
+
+	unsigned int comprobarPeriodo (char tipoGenerador);
+	void mostrarComprobacionPeriodo();
+
+protected:
+	unsigned int a;
+	unsigned int b;
+	unsigned int m;
+	unsigned int X0;
+	bool periodoCompleto;
+	bool periodoMaximo;
+	std::vector<unsigned int> secuencia;
 };
 
 #endif // CALCULOS_HPP_INCLUDED

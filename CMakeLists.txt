@@ -6,12 +6,9 @@ set(lista_archivos
   main.cpp
   cli.cpp
   textosMenus.cpp
-  funcMatematicasBasicas.cpp
-  #Específicas
   calculos.cpp
+  funcMatematicasBasicas.cpp
   distribucionesDiscretas.cpp
-  #Los submenus de cada tipo de operacion
-  #menuIA.cpp
 )
 
 #Debug/Release

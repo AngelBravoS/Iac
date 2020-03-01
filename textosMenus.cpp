@@ -50,7 +50,7 @@ void CLI::ayuda() {
 }
 
 void CLI::listadOpcionesPricipales() {
-	
+
 	std::cout << "	=========================== " << '\n';
 	std::cout << '\n';
 	std::cout << "1) Calcular la secuencia de generadores congruenciales." << '\n';
@@ -60,8 +60,8 @@ void CLI::listadOpcionesPricipales() {
 	std::cout << "> ";
 }
 
-void CLI::tipoGenerador(){
-  	std::cout << "Escribe x para el generador congruencial mixto." << '\n';
+void CLI::tipoGenerador() {
+	std::cout << "Escribe x para el generador congruencial mixto." << '\n';
 	std::cout << "Escribe m para el generador congruencial multiplicativo." << '\n';
 	std::cout << "> ";
 }
